@@ -11,7 +11,7 @@ from app.config import settings
 from app.database import engine, Base
 
 # Import all routes
-from app.routes import auth, expenses, dashboard, ai_advisor
+from app.routes import auth, expenses, dashboard, ai_advisor, wellness
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -60,6 +60,7 @@ app.include_router(auth.router)
 app.include_router(expenses.router)
 app.include_router(dashboard.router)
 app.include_router(ai_advisor.router)
+app.include_router(wellness.router)
 
 # Health check endpoint
 @app.get("/")
